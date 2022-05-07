@@ -1,6 +1,6 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { authOperations } from '../redux/auth';
+import { useDispatch } from 'react-redux';
+import authOperations from '../redux/authorization/auth-operations';
 
 const styles = {
   form: {
@@ -14,7 +14,7 @@ const styles = {
 };
 
 export function RegisterPage() {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -34,7 +34,7 @@ export function RegisterPage() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // dispatch(authOperations.register({ name, email, password }));
+    dispatch(authOperations.register({ name, email, password }));
     setName('');
     setEmail('');
     setPassword('');
@@ -46,12 +46,12 @@ export function RegisterPage() {
 
       <form onSubmit={handleSubmit} autoComplete="off" style={styles.form}>
         <label style={styles.label}>
-          Ім’я
+          Name
           <input type="text" name="name" value={name} onChange={handleChange} />
         </label>
 
         <label style={styles.label}>
-          Пошта
+          Email
           <input
             type="email"
             name="email"
@@ -61,7 +61,7 @@ export function RegisterPage() {
         </label>
 
         <label style={styles.label}>
-          Пароль
+          Password
           <input
             type="password"
             name="password"

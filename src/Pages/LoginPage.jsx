@@ -1,6 +1,6 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { authOperations } from '../redux/auth';
+import { useDispatch } from 'react-redux';
+import authOperations from '../redux/authorization/auth-operations';
 
 const styles = {
   form: {
@@ -14,7 +14,7 @@ const styles = {
 };
 
 export function LoginPage() {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -31,7 +31,7 @@ export function LoginPage() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // dispatch(authOperations.logIn({ email, password }));
+    dispatch(authOperations.logIn({ email, password }));
     setEmail('');
     setPassword('');
   };
@@ -42,7 +42,7 @@ export function LoginPage() {
 
       <form onSubmit={handleSubmit} autoComplete="off" style={styles.form}>
         <label style={styles.label}>
-          Пошта
+          Email
           <input
             type="email"
             name="email"
@@ -52,7 +52,7 @@ export function LoginPage() {
         </label>
 
         <label style={styles.label}>
-          Пароль
+          Password
           <input
             type="password"
             name="password"

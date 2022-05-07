@@ -1,5 +1,6 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { authSelectors, authOperations } from '../../redux/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserEmail } from '../../redux/authorization/auth-selectors';
+import authOperations from '../../redux/authorization/auth-operations';
 // import defaultAvatar from './default-avatar.png';
 
 const styles = {
@@ -7,25 +8,24 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
   },
-  avatar: {
-    marginRight: 4,
-  },
-  name: {
+
+  email: {
     fontWeight: 700,
     marginRight: 12,
   },
 };
 
 export function UserMenu() {
-  //   const dispatch = useDispatch();
-  //   const name = useSelector(authSelectors.getUsername);
-  //   const avatar = defaultAvatar;
+  const dispatch = useDispatch();
+  const email = useSelector(getUserEmail);
 
   return (
     <div style={styles.container}>
-      <span style={styles.name}> email</span>
-      <button type="button">Log out</button>
-      {/* <button type="button" onClick={() => dispatch(authOperations.logOut())}> */}
+      <span style={styles.email}> {email}</span>
+
+      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
+        Log out
+      </button>
     </div>
   );
 }

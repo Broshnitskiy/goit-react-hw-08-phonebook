@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { GlobalStyle } from './components/GlobalStyles';
 import { Toaster } from 'react-hot-toast';
 import { MainNavApp } from 'components/MainNavApp/MainNavApp';
+import PublicRoute from 'components/PublicRoute';
+import PrivateRoute from 'components/PrivateRoute';
 
 const ContactsPage = CreateLazyChunk('ContactsPage');
 const LoginPage = CreateLazyChunk('LoginPage');
@@ -15,9 +17,30 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/" element={<MainNavApp />}>
-          <Route path="register" element={<RegisterPage />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="contacts" element={<ContactsPage />} />
+          <Route
+            path="register"
+            element={
+              <PublicRoute restricted>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <PublicRoute restricted redirectTo="/contacts">
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute redirectTo="/login">
+                <ContactsPage />
+              </PrivateRoute>
+            }
+          />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
