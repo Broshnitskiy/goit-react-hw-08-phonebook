@@ -1,18 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
-import phoneImage from '../img/teletown.png';
 
 export const GlobalStyle = createGlobalStyle`
 
  html {
     scroll-behavior: smooth;
   }
-body{
-     background-image: url(${phoneImage});
-  background-size: 300px ;
-  background-repeat:no-repeat;
-  background-position:80px 30px;
- 
-}
+
 
 a {
     text-decoration: none;
