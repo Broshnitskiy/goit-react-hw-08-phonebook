@@ -14,14 +14,6 @@ const styles = {
     backgroundPosition: '80px 35px',
     padding: '20px',
   },
-  //   form: {
-  //     width: 320,
-  //   },
-  //   label: {
-  //     display: 'flex',
-  //     flexDirection: 'column',
-  //     marginBottom: 15,
-  //   },
 };
 
 export function ContactsPage() {

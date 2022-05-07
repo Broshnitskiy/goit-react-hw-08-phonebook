@@ -1,24 +1,20 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { List, Link, ListItem } from './MainNavApp.styled';
+import { Link, Nav } from './MainNavApp.styled';
+import { AuthNav } from '../AuthNav/AuthNav';
 
 export const MainNavApp = () => {
   return (
     <>
       <header>
-        <nav>
-          <List>
+        <Nav>
+          <ul>
             <li>
-              <Link to="/contacts">Контакти</Link>
+              <Link to="/contacts">Contacts</Link>
             </li>
-            <ListItem>
-              <Link to="/login">Логін</Link>
-            </ListItem>
-            <li>
-              <Link to="/register">Реєстрація</Link>
-            </li>
-          </List>
-        </nav>
+          </ul>
+          <AuthNav />
+        </Nav>
       </header>
       <Suspense fallback="">
         <Outlet />
