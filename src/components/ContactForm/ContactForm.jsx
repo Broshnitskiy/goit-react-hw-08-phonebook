@@ -35,7 +35,7 @@ export const ContactForm = ({ contacts }) => {
 
     const newContact = {
       name,
-      phone: number,
+      number,
     };
 
     const isExistContact = contacts.find(
@@ -94,7 +94,7 @@ ContactForm.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
 };
