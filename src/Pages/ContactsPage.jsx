@@ -14,6 +14,18 @@ const styles = {
     backgroundPosition: '80px 35px',
     padding: '20px',
   },
+  h1: {
+    marginBottom: '20px',
+    textAlign: 'center',
+    color: 'blue',
+    fontSize: '50px',
+  },
+  h2: {
+    textAlign: 'center',
+    color: 'green',
+    fontSize: '40px',
+  },
+  p: { textAlign: 'center' },
 };
 
 export function ContactsPage() {
@@ -26,33 +38,16 @@ export function ContactsPage() {
 
   return (
     <section style={styles.section}>
-      <h1
-        style={{
-          marginBottom: '20px',
-          textAlign: 'center',
-          color: 'blue',
-          fontSize: '50px',
-        }}
-      >
-        Phonebook
-      </h1>
+      <h1 style={styles.h1}>Phonebook</h1>
       <ContactForm contacts={contacts} />
       <div>
         {contacts?.length !== 0 ? (
           <>
-            <h2
-              style={{
-                textAlign: 'center',
-                color: 'green',
-                fontSize: '40px',
-              }}
-            >
-              Contacts
-            </h2>
+            <h2 style={styles.h2}>Contacts</h2>
             <Filter value={filter} handleChange={handleChange} />
           </>
         ) : (
-          <p style={{ textAlign: 'center' }}>No saved contacts</p>
+          <p style={styles.p}>No saved contacts</p>
         )}
 
         {isFetching && <Spinner />}
