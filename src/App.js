@@ -10,6 +10,7 @@ import PrivateRoute from 'components/PrivateRoute';
 import { getIsFetchingCurrent } from './redux/authorization/auth-selectors';
 import authOperations from './redux/authorization/auth-operations';
 
+const HomePage = CreateLazyChunk('HomePage');
 const ContactsPage = CreateLazyChunk('ContactsPage');
 const LoginPage = CreateLazyChunk('LoginPage');
 const RegisterPage = CreateLazyChunk('RegisterPage');
@@ -22,8 +23,6 @@ function App() {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-  console.log(isFetchingCurrentUser);
-
   return (
     <>
       <GlobalStyle />
@@ -31,6 +30,14 @@ function App() {
       {!isFetchingCurrentUser && (
         <Routes>
           <Route path="/" element={<MainNavApp />}>
+            <Route
+              index
+              element={
+                <PublicRoute>
+                  <HomePage />
+                </PublicRoute>
+              }
+            />
             <Route
               path="register"
               element={

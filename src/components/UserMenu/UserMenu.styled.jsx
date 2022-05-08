@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-export const Link = styled.div`
-  font-size: 20px;
-  margin-right: 20px;
-  &.active {
-    color: red;
-    border: 1px dashed;
-  }
-  &:hover {
-    color: blue;
+export const Container = styled.div`
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  span {
+    font-weight: 700;
+    margin-right: 12px;
   }
 `;

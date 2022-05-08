@@ -3,8 +3,14 @@ import { useDispatch } from 'react-redux';
 import authOperations from '../redux/authorization/auth-operations';
 
 const styles = {
+  h1: {
+    textAlign: 'center',
+    marginBottom: 24,
+  },
   form: {
     width: 320,
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   label: {
     display: 'flex',
@@ -42,7 +48,7 @@ export function RegisterPage() {
 
   return (
     <div>
-      <h1>Сторінка регістрації</h1>
+      <h1 style={styles.h1}>Registration page</h1>
 
       <form onSubmit={handleSubmit} autoComplete="off" style={styles.form}>
         <label style={styles.label}>
@@ -70,7 +76,7 @@ export function RegisterPage() {
           />
         </label>
 
-        <button type="submit">Зареєструватися</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
