@@ -30,7 +30,11 @@ const styles = {
 
 export function ContactsPage() {
   const [filter, setFilter] = useState('');
-  const { data: contacts, isError, isFetching } = useFetchContactsQuery();
+  const {
+    data: contacts,
+    isError,
+    isFetching,
+  } = useFetchContactsQuery(undefined, { refetchOnMountOrArgChange: true });
 
   const handleChange = e => {
     setFilter(e.target.value);
