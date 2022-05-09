@@ -10,8 +10,8 @@ export const ContactList = ({ filter, contacts }) => {
 
   return (
     <List>
-      {findContacts.map(({ id, name, phone }) => (
-        <ContactListItem key={id} id={id} name={name} number={phone} />
+      {findContacts.map(({ id, name, number }) => (
+        <ContactListItem key={id} id={id} name={name} number={number} />
       ))}
     </List>
   );
