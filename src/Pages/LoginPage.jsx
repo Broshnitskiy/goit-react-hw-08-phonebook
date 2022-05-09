@@ -127,7 +127,7 @@ export function LoginPage() {
               </Grid>
               <Grid item>
                 <Link
-                  href="https://github.com/Broshnitskiy/goit-react-hw-08-phonebook/register"
+                  href="https://broshnitskiy.github.io/goit-react-hw-08-phonebook/register"
                   variant="body2"
                 >
                   {"Don't have an account? Sign Up"}
