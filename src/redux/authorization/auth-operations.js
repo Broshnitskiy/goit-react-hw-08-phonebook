@@ -17,6 +17,7 @@ const register = createAsyncThunk('auth/register', async credentials => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
     token.set(data.token);
+    toast.success('You have successfully registered');
     return data;
   } catch (error) {
     console.log(error.message);
@@ -28,6 +29,7 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await axios.post('/users/login', credentials);
     token.set(data.token);
+    toast.success('You are logged in');
     return data;
   } catch (error) {
     console.log(error.message);

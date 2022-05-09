@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserEmail } from '../../redux/authorization/auth-selectors';
 import authOperations from '../../redux/authorization/auth-operations';
 import { Container } from './UserMenu.styled';
+import Button from '@mui/material/Button';
 
 export function UserMenu() {
   const dispatch = useDispatch();
@@ -10,10 +11,13 @@ export function UserMenu() {
   return (
     <Container>
       <span> {email}</span>
-
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
+      <Button
+        variant="contained"
+        type="button"
+        onClick={() => dispatch(authOperations.logOut())}
+      >
         Log out
-      </button>
+      </Button>
     </Container>
   );
 }

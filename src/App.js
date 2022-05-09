@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Toaster />
+      <Toaster toastOptions={{ duration: 5000 }} />
       {!isFetchingCurrentUser && (
         <Routes>
           <Route path="/" element={<MainNavApp />}>
@@ -41,7 +41,7 @@ function App() {
             <Route
               path="register"
               element={
-                <PublicRoute restricted>
+                <PublicRoute restricted redirectTo="/contacts">
                   <RegisterPage />
                 </PublicRoute>
               }

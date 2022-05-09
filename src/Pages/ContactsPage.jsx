@@ -4,14 +4,12 @@ import { ContactList } from '../components/ContactList/ContactList';
 import { Filter } from '../components/Filter/Filter';
 import { ContactForm } from '../components/ContactForm/ContactForm';
 import { Spinner } from '../components/Spinner/Spinner';
-import phoneImage from '../img/teletown.png';
 
 const styles = {
   section: {
-    backgroundImage: `url(${phoneImage})`,
-    backgroundSize: '300px',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: '80px 35px',
+    maxWidth: '1200px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     padding: '20px',
   },
   h1: {
@@ -24,6 +22,7 @@ const styles = {
     textAlign: 'center',
     color: 'green',
     fontSize: '40px',
+    marginBottom: '20px',
   },
   p: { textAlign: 'center' },
 };

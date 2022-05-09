@@ -1,23 +1,15 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../redux/authorization/auth-operations';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const styles = {
-  h1: {
-    textAlign: 'center',
-    marginBottom: 24,
-  },
-  form: {
-    width: 320,
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+const theme = createTheme();
 
 export function RegisterPage() {
   const dispatch = useDispatch();
@@ -47,37 +39,76 @@ export function RegisterPage() {
   };
 
   return (
-    <div>
-      <h1 style={styles.h1}>Registration page</h1>
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Typography component="h1" variant="h5">
+            Registration
+          </Typography>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{ mt: 1 }}
+          >
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="Name"
+              name="name"
+              autoComplete="off"
+              autoFocus
+              type="text"
+              value={name}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="off"
+              autoFocus
+              type="email"
+              value={email}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="off"
+              value={password}
+              onChange={handleChange}
+            />
 
-      <form onSubmit={handleSubmit} autoComplete="off" style={styles.form}>
-        <label style={styles.label}>
-          Name
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
-
-        <label style={styles.label}>
-          Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
-
-        <label style={styles.label}>
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <button type="submit">Register</button>
-      </form>
-    </div>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              To register
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
 }

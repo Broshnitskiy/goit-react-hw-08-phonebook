@@ -6,7 +6,6 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
-
 a {
     text-decoration: none;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -2,8 +2,8 @@ import phoneBookImage from '../img/phone-book-img.jpg';
 
 const styles = {
   container: {
-    width: '1000px',
-    height: '800px',
+    width: '1200px',
+    height: '600px',
     marginLeft: 'auto',
     marginRight: 'auto',
     backgroundImage: `url(${phoneBookImage})`,
@@ -11,8 +11,10 @@ const styles = {
     backgroundRepeat: 'no-repeat',
   },
   h1: {
+    fontSize: '48px',
     textAlign: 'center',
-    paddingTop: 36,
+    color: 'rgba(226, 255, 0, 0.95)',
+    paddingTop: 24,
   },
 };
 
