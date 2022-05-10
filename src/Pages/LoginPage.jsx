@@ -79,7 +79,7 @@ export function LoginPage() {
           <Box
             component="form"
             onSubmit={handleSubmit}
-            noValidate
+            autoComplete="off"
             sx={{ mt: 1 }}
           >
             <TextField
@@ -89,7 +89,7 @@ export function LoginPage() {
               id="email"
               label="Email Address"
               name="email"
-              autoComplete="email"
+              autoComplete="off"
               autoFocus
               type="email"
               value={email}
@@ -103,7 +103,7 @@ export function LoginPage() {
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
+              autoComplete="off"
               value={password}
               onChange={handleChange}
             />
