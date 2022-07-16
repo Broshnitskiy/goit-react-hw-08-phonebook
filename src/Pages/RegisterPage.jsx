@@ -74,7 +74,7 @@ export function RegisterPage() {
               id="email"
               label="Email Address"
               name="email"
-              autoComplete="off"
+              autoComplete="email"
               autoFocus
               type="email"
               value={email}
@@ -88,7 +88,7 @@ export function RegisterPage() {
               label="Password"
               type="password"
               id="password"
-              autoComplete="off"
+              autoComplete="current-password"
               value={password}
               onChange={handleChange}
             />

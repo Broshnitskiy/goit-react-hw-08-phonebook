@@ -76,12 +76,7 @@ export function LoginPage() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            autoComplete="off"
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -89,7 +84,7 @@ export function LoginPage() {
               id="email"
               label="Email Address"
               name="email"
-              autoComplete="off"
+              autoComplete="email"
               autoFocus
               type="email"
               value={email}
@@ -103,7 +98,7 @@ export function LoginPage() {
               label="Password"
               type="password"
               id="password"
-              autoComplete="off"
+              autoComplete="current-password"
               value={password}
               onChange={handleChange}
             />
